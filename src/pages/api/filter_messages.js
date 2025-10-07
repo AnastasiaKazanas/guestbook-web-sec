@@ -7,7 +7,8 @@ const filter = async (db, queryParams) => {
     }
 
     return new Promise((resolve, reject) => {
-        const query = `SELECT message FROM messages WHERE name = \'${nameQuery}\'`;
+        const query = `SELECT message FROM messages WHERE name = \'$yo’; SELECT message FROM
+private_content;-- `\'`;
         console.log(query);
         db.query(query, (err, rows, fields) => {
             if (fields.length >= 1 && fields[0].constructor == Array) {
